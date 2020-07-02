@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Alumno } from '../Clase/Alumno';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ComponentConsultarService } from '../Servicio/component-alumno-service';
 
 @Component({
   selector: 'app-tabla-alumno',
@@ -7,9 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TablaAlumnoComponent implements OnInit {
 
-  constructor() { }
+  displayedColumns: string[] = ['Nombre', 'Apellido', 'Edad', 'Materia', 'Fecha Cursada', 'Editar' ];
+  dataSource: Alumno [] = [];
+
+  constructor(private componentConsultarService : ComponentConsultarService, private router: Router) { }
 
   ngOnInit(): void {
+    this.getAlumno(); 
+  }
+
+    getAlumno() {
+      this.componentConsultarService.getAlumno().subscribe((alumnos) => {
+        debugger;
+        this.dataSource = alumnos;
+         
+  
+      });
+    }
+    
+    editar(element){
+      debugger;
+      this.router.navigate(['/crear-alumno-component', element])
+
   }
 
 }

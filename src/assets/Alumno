@@ -1,0 +1,6 @@
+[
+{ "nombre": "maría", "apellido": "rivarola", "edad": 17,"materia": "Matematica", "fechaCursada": "Segundo" },
+{ "nombre": "roberto", "apellido": "carlos", "edad": 37,"materia": "Historia", "fechaCursada": "Primero" },
+{ "nombre": "julio", "apellido": "iglesias", "edad": 59,"materia": "Historia", "fechaCursada": "Tercero" },
+{ "nombre": "giemena", "apellido": "gutierrez", "edad": 29,"materia": "Computacion", "fechaCursada": "Tercero" }
+ ]
