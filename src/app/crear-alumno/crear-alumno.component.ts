@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import  { FormBuilder } from '@angular/forms';
+
+interface Materias {
+  value: string;
+  viewValue: string;
+}
 
 @Component({
   selector: 'app-crear-alumno',
@@ -7,9 +13,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrearAlumnoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
+    materias : Materias[] = [
+      { value : '0', viewValue : 'Matematica' },
+      { value : '1', viewValue : 'Historia' },
+      { value : '2', viewValue : 'Computacion' },
+    ];
 
-  ngOnInit(): void {
+  alumnoForm = this.fb.group({
+    nombre: [''],
+    apellido: [''],
+    edad: [''],
+    materia: [''],
+    fechaCursada: ['']
+
+  })
+
+  ngOnInit()  { }
+
+  submit(){
+    debugger;
+    this.alumnoForm.value;
+
   }
 
 }
